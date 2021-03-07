@@ -1,4 +1,4 @@
-# income-census
+# Income Prediction App : Based on UCI Irvine Income Census Data
 Project Details : 
 
 Data Source : http://archive.ics.uci.edu/ml/datasets/Census+Income
