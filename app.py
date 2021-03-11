@@ -265,9 +265,11 @@ def predict_result(model,content):
     result = model.predict(array_data)
     text_output = ''
     if result == [[0.]] : 
-        text_output.join('YOU HAVE UNDER $50 K INCOME IN A YEAR')
+        text_output = 'YOU HAVE UNDER $50 K INCOME IN A YEAR'
     elif result ==  [[1.]] : 
-        text_output.join('YOU HAVE ABOVE $50 K INCOME IN A YEAR')
+        text_output = 'YOU HAVE ABOVE $50 K INCOME IN A YEAR'
+    else : 
+        text_output = 'another result'
     return text_output
 
 @app.route('/',methods=['GET','POST'])
