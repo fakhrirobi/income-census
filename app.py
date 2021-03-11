@@ -263,12 +263,8 @@ def predict_result(model,content):
 
     array_data = np.asarray(feature_input)
     result = model.predict(array_data)
-    text_output = ''
-    if result == 0 : 
-        text_output.join('YOU HAVE UNDER $50 K INCOME IN A YEAR')
-    elif result == 1 : 
-        text_output.join('YOU HAVE ABOVE $50 K INCOME IN A YEAR')
-    return text_output
+    return result
+
 @app.route('/',methods=['POST'])
 def main():
     #creating form instance
