@@ -12,7 +12,7 @@ from flask_wtf.csrf import CSRFProtect
 app = Flask(__name__)
 #CONFIGURING SECRET KEY 
 csrf = CSRFProtect(app)
-model = load_model('prediction_model.h5')
+model = load_model('income prediction\prediction_model.h5')
 app.config['SECRET_KEY']= 'Query76'
 app.config['SESSION_TYPE'] = 'filesystem'
 DESTINATION_COLUMNS = ['age',
@@ -273,7 +273,7 @@ def predict_result(model,content):
 def main():
     #creating form instance
     form = FEATURES()
-    return render_template('index.html',form=form,session=session)
+    return render_template('index.html',form=form)
 
 @app.route('/prediction',methods=['GET','POST'])
 def prediction():
