@@ -269,7 +269,7 @@ def predict_result(model,content):
     elif result == 1 : 
         text_output.join('YOU HAVE ABOVE $50 K INCOME IN A YEAR')
     return text_output
-@app.route('/',methods=['GET'])
+@app.route('/',methods=['POST'])
 def main():
     #creating form instance
     form = FEATURES()
