@@ -1,42 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
 
+    <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/style.css') }}"
+            type="text/css"
+    />
 
 <body>
-    <h3 class="display-4">Predict Whether Having Above 50K Income or Below per Year</h1>
-            <form  method="POST"  action="{{ url_for('prediction') }}">
-                {{ form.hidden_tag }}
-                {{form.csrf_token()}}
-                {{session['Age']}}
-                <br>{{ form.age.label }}</br>
-                {{ form.age(size=20) }}
-                {{ form.workclass.label }}
-                {{ form.workclass }}
-                {{ form.fnlwgt.label }}
-                {{ form.fnlwgt }}
-                {{ form.education.label }}
-                {{ form.education }}
-                {{ form.education_num.label }}
-                {{ form.education_num }}
-                {{ form.marital_status.label }}
-                {{ form.marital_status }}
-                {{ form.occupation.label }}
-                {{ form.occupation }}
-                {{ form.relationship.label }}
-                {{ form.relationship }}
-                {{ form.sex.label }}
-                {{ form.sex }}
-                {{ form.race.label }}
-                {{ form.race }}
-                {{ form.capital_gain.label }}
-                {{ form.capital_gain }}
-                {{ form.capital_loss.label }}
-                {{ form.capital_loss }}
-                {{ form.hours_per_week.label }}
-                {{ form.hours_per_week }}
-                {{ form.native_country.label }}
-                {{ form.native_country }}
-                {{ form.predict() }}
-            </form>    
+    <div class="container-fluid"> <div class=" text-center mt-5 ">
+        <h3 class="display-4">Predict Whether Having Above 50K Income or Below per Year</h1>
+    </div>
+    <div class="row ">
+        <div class="card-body">
+            <div class="col-lg-7 mx-auto">
+                <div class="card text-white bg-dark mb-3"">
+                    
+                        <div class="container">
+                            <form  method="POST"  action="{{ url_for('prediction') }}">
+                                {{ form.hidden_tag() }}
+                                {{form.csrf_token()}}
+                                    
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                        {{ form.age.label }}
+                                        {{ form.age(size=20) }}
+                                        </div> 
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        {{ form.workclass.label }}
+                                        {{ form.workclass }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.fnlwgt.label }}
+                                            {{ form.fnlwgt }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.education.label }}
+                                            {{ form.education }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.education_num.label }}
+                                            {{ form.education_num }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.marital_status.label }}
+                                            {{ form.marital_status }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.occupation.label }}
+                                            {{ form.occupation }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.relationship.label }}
+                                            {{ form.relationship }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.sex.label }}
+                                            {{ form.sex }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.race.label }}
+                                            {{ form.race }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.capital_gain.label }}
+                                            {{ form.capital_gain }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.capital_loss.label }}
+                                            {{ form.capital_loss }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.hours_per_week.label }}
+                                            {{ form.hours_per_week }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            {{ form.native_country.label }}
+                                            {{ form.native_country }}
+                                        </div>
+                                    </div>
+                                    {{ form.predict() }}
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div> <!-- /.8 -->
+    </div> <!-- /.row--
 </body>
- 
-                                
+ >
+  
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
