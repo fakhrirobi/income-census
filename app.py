@@ -262,7 +262,6 @@ def predict_result(model,content):
 
 
     array_data = np.asarray(feature_input)
-    array
     result = model.predict(array_data)
     text_output = ''
     if result == 0 : 
