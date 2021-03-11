@@ -257,9 +257,6 @@ def predict_result(model,content):
     
     for column in NUMERICAL : 
         feature_input[column] == np.log1p(feature_input[column]) 
-    feature_input.to_excel('feat.xlsx',index=False)
-
-
 
     array_data = np.asarray(feature_input)
     result = model.predict(array_data)
