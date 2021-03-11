@@ -269,7 +269,7 @@ def predict_result(model,content):
         text_output.join('another result')
     return text_output
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/',methods=['GET'])
 def main():
     #creating form instance
     form = FEATURES()
