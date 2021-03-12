@@ -7,7 +7,8 @@ from wtforms import StringField, TextField, SubmitField,SelectField,IntegerField
 from wtforms.validators import DataRequired, Length
 from tensorflow.keras.models import load_model
 from flask_wtf.csrf import CSRFProtect
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Force TF to use only the CPU
 
 app = Flask(__name__)
 #CONFIGURING SECRET KEY 
@@ -261,13 +262,15 @@ def predict_result(model,content):
     array_data = np.asarray(feature_input)
     result = model.predict(array_data)
     text_output = ''
-    if int(result) == 0 : 
-        text_output.join('YOU HAVE UNDER $50 K INCOME IN A YEAR')
-    elif int(result) ==  1 : 
-        text_output.join('YOU HAVE ABOVE $50 K INCOME IN A YEAR')
+    text = []
+    if int(result) > 0  : 
+        text.append('You  Have Income Above $50 K  In  A Year')
+        
     else : 
-        text_output.join('another result')
-    return text_output
+        text.append('You  Have Income Under $50 K  In  A Year')
+
+    return text[0]
+    
 
 @app.route('/',methods=['GET'])
 def main():
