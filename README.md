@@ -9,7 +9,7 @@ I divided the project into 2 seperate main objective :
   a. Downloading the data from UCI Irvine Machine Learning Datasets
   b. Reading the training data (adult.data and adult.names) in Microsoft Excell compiled them as adult_dataset income.xlsx file, while with the test data only reading adult.test and saving  it as test_adult dataset.xlsx 
   c. 
-2. Model Creation : In this phase the step were break down on the notebook file model_scratch.ipynb 
+2. Model Creation : In this phase the step were break down on the notebook file ANN_Model.ipynb 
 
 3. Deploying Model : 
   Technology : 1. Flask , 2.Heroku 
