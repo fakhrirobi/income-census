@@ -14,5 +14,5 @@ I divided the project into 2 seperate main objective :
 3. Deploying Model : 
   Technology : 1. Flask , 2.Heroku 
 
-
+link : https://incomepredictionapp.herokuapp.com/
 #
